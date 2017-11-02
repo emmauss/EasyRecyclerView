@@ -459,10 +459,11 @@ namespace EasyRecyclerView
 
         protected override IParcelable OnSaveInstanceState()
         {
-            ISavedState ss = new ISavedState(base.OnSaveInstanceState(),this);
-
-            ss.inChoiceMode = inChoiceMode;
-            ss.choiceState = choiceState;
+            ISavedState ss = new ISavedState(base.OnSaveInstanceState(), this)
+            {
+                inChoiceMode = inChoiceMode,
+                choiceState = choiceState
+            };
 
             return ss;
         }
